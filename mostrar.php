@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <title>CRUD</title>
  
 </head>
+<script>
+    function confirmacion(){
+        var respuesta = confirm("¿confirma que desea borrar el registro?");
+    if(respuesta == true){
+        return true;
+    }else {
+    return false;
+    }
+    }
+</script>
 <body>
     <?php
     require 'conexion.php';
@@ -24,11 +35,12 @@
                 <tr>
               
                 
-                    <th>nombre</th>
-                    <th>autor</th>
-                    <th>precio</th>
-                    <th>disponible</th>
-                   </tr>
+                    <th scope="col">nombre</th>
+                    <th scope="col">autor</th>
+                    <th scope="col">precio</th>
+                    <th scope="col"> disponible</th>
+                    <th scope="col">acciones</th>
+                   </tr >
             </thead>
             <tbody>
                 <?php      
@@ -40,7 +52,11 @@
                     <td><?php  echo $fila['autor']?></td>
                     <td><?php  echo $fila['precio']?></td>
                     <td><?php  echo $fila['disponible']?></td>
-                   <button class="button">eliminar</button>
+                    <th>
+                    <a href="eliminar.php?Id=<?php echo $fila['id']?>" class="btn btn-danger" onclick="return confirmacion()">Eliminar</a>
+                    <a href="editar.php?Id=<?php echo $fila['id']?>" class="btn btn-warning" onclick="return confirmacion()">editar</a>
+                    </th>
+                   
                    
                 </tr>
                     <?php } ?>
