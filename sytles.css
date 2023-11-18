@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(175, 197, 197);
+}
+
+form{
+    width: 395px;
+    height: 600px;
+    margin:auto;
+    padding: 5px ;
+    overflow: hidden;
+    text-align: center;
+    background-color: #7d928f;
+    border-radius: 15px 15px;
+    box-shadow: #333;
+}
+button{
+    width: 395px;
+    overflow: hidden;
+    margin:auto;
+    text-align: center;
+    padding: 8px ;
+    border-radius: 15px 15px;
+    
+}
+h1{
+    text-align: center;
+}
